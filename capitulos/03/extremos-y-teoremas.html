@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>3. Derivación de una función de variable real &#8212; Calculo en una variable</title>
+    <title>Extremos relativos y absolutos &#8212; Calculo en una variable</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,10 +51,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.1. Definición de derivada y propiedades básicas" href="01.DerivacionDefProp.html" />
-    <link rel="prev" title="2.9. Boletín 2: Límites, continuidad, Lagrange y dicotomía" href="../02/09.Boletin2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../01/README.html">
    1. Conjuntos de números
@@ -196,11 +196,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="README.html">
    3. Derivación
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
@@ -321,6 +321,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/capitulos/03/extremos-y-teoremas.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -343,7 +372,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/capitulos/03/README.md"
+        <a href="../../_sources/capitulos/03/extremos-y-teoremas.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -354,7 +383,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -380,23 +409,70 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Extremos relativos y absolutos
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aplicaciones-inmediatas-de-la-derivacion-de-funciones">
+   Aplicaciones inmediatas de la derivación de funciones
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Derivación de una función de variable real</h1>
+                <h1>Extremos relativos y absolutos</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Extremos relativos y absolutos
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aplicaciones-inmediatas-de-la-derivacion-de-funciones">
+   Aplicaciones inmediatas de la derivación de funciones
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -404,18 +480,78 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="derivacion-de-una-funcion-de-variable-real">
-<h1><span class="section-number">3. </span>Derivación de una función de variable real<a class="headerlink" href="#derivacion-de-una-funcion-de-variable-real" title="Permalink to this headline">#</a></h1>
-<p>En este capítulo introduciremos la derivación para funciones reales de una variable real y estudiaremos sus propiedades y algunas aplicaciones.</p>
-<p>Lo dividimos en 4 secciones:</p>
-<ol class="simple">
-<li><p>Definición de derivada y propiedades básicas.</p></li>
-<li><p>Método numérico de Newton-Raphson.</p></li>
-<li><p>Derivadas sucesivas.</p></li>
-<li><p>Aplicaciones de la derivación.</p></li>
-</ol>
-<div class="toctree-wrapper compound">
-</div>
+  <section id="extremos-relativos-y-absolutos">
+<h1>Extremos relativos y absolutos<a class="headerlink" href="#extremos-relativos-y-absolutos" title="Permalink to this headline">#</a></h1>
+<p>Supongamos un intervalo abierto <span class="math notranslate nohighlight">\(A \subset \mathbb{R}\)</span> y una aplicación <span class="math notranslate nohighlight">\(f : A \longrightarrow \mathbb{R}\)</span>.</p>
+<p><strong>Definición.</strong> Decimos que <span class="math notranslate nohighlight">\(f\)</span> presenta un <strong>máximo relativo</strong> en <span class="math notranslate nohighlight">\(a \in A\)</span> si y sólo si existe <span class="math notranslate nohighlight">\(h &gt; 0\)</span> tal que</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+f(x) \leq f(a) , \quad \forall x \in (a-h,a+h) \, .
+\end{equation*}\]</div>
+<p>Análogamente, decimos que <span class="math notranslate nohighlight">\(f\)</span> presenta un <strong>m’{i}nimo relativo</strong> en <span class="math notranslate nohighlight">\(a \in A\)</span> si y sólo si existe <span class="math notranslate nohighlight">\(h &gt; 0\)</span> tal que:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+f(x) \geq f(a) , \quad \forall x \in (a-h,a+h) \, .
+\end{equation*}\]</div>
+<p>Por extremo relativo entendemos, indistintamente, un máximo o un mínimo relativo.</p>
+<p>Se denomina supremo e ínfimo de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(A\)</span>, respectivamente, a las cantidades:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\underset{x \in A}{\sup} f(x) \quad \quad \text{ e } \quad \quad 
+\underset{x \in A}{\inf} f(x) \, , 
+\end{equation*}\]</div>
+<p>es decir, al supremo e ínfimo del conjunto imagen <span class="math notranslate nohighlight">\(f(A)\)</span>.</p>
+<p>Cuando el supremo o el ínfimo de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(A\)</span> existen y pertenecen a <span class="math notranslate nohighlight">\(f(A)\)</span>, se denominan <strong>m’{a}ximo absoluto</strong> y <strong>mínimo absoluto</strong> de <span class="math notranslate nohighlight">\(f\)</span> en <span class="math notranslate nohighlight">\(A\)</span>, respectivamente.  El máximo y el mínimo absoluto se denominan, globalmente, extremos absolutos.</p>
+<p><strong>Teorema.</strong> Si <span class="math notranslate nohighlight">\(f\)</span> presenta un extremo relativo en el punto <span class="math notranslate nohighlight">\(a \in A\)</span> y <span class="math notranslate nohighlight">\(f\)</span> es derivable en
+dicho punto, entonces <span class="math notranslate nohighlight">\(f'(a) = 0\)</span>.</p>
+<p><strong>Observación.</strong> La condición anterior es necesaria, pero no suficiente: la función puede presentar derivada nula en un punto, pero no tener un extremo en él.   Por ejemplo, la función <span class="math notranslate nohighlight">\(f(x) = x^3\)</span> verifica <span class="math notranslate nohighlight">\(f'(0) = 0\)</span>, pero no se trata de un máximo ni de un mínimo.</p>
+<p><strong>Definición.</strong> Si en un punto <span class="math notranslate nohighlight">\(a\)</span> se tiene <span class="math notranslate nohighlight">\(f'(a) = 0\)</span>, decimos que <span class="math notranslate nohighlight">\(a\)</span> es un <strong>punto estacionario</strong> (o <strong>crítico</strong>) de la función <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Para encontrar los extremos (máximos y mínimos) absolutos de una función en un intervalo cerrado <span class="math notranslate nohighlight">\([a,b]\)</span>, debemos estudiar:</p>
+<ul class="simple">
+<li><p>los puntos <span class="math notranslate nohighlight">\(x\)</span> donde <span class="math notranslate nohighlight">\(f\)</span> es derivable y <span class="math notranslate nohighlight">\(f'(x) = 0\)</span></p></li>
+<li><p>los puntos donde <span class="math notranslate nohighlight">\(f\)</span> no es derivable</p></li>
+<li><p>los extremos (<span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(b\)</span>) del intervalo.</p></li>
+</ul>
+<p><strong>Teorema de Rolle.</strong>
+Sea una aplicación <span class="math notranslate nohighlight">\(f : [a,b] \longrightarrow \mathbb{R}\)</span>, continua en <span class="math notranslate nohighlight">\([a,b]\)</span> y derivable en <span class="math notranslate nohighlight">\((a,b)\)</span>.  Si <span class="math notranslate nohighlight">\(f(a) = f(b)\)</span>, entonces existe un punto <span class="math notranslate nohighlight">\(\xi \in (a,b)\)</span> tal que:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+f^{\prime} (\xi) = 0 \, .
+\end{equation*}\]</div>
+<p><img alt="Teorema de Rolle" src="capitulos/03/rolle.png" /></p>
+<p><strong>Teorema de Cauchy, o del valor medio generalizado.</strong>
+Sean dos aplicaciones <span class="math notranslate nohighlight">\(f, g : [a,b] \rightarrow \mathbb{R}\)</span> continuas en <span class="math notranslate nohighlight">\([a,b]\)</span> y derivables en <span class="math notranslate nohighlight">\((a,b)\)</span>.  Entonces existe un punto <span class="math notranslate nohighlight">\(\xi \in (a,b)\)</span> tal que:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\left[ f(b) - f(a) \right] g' (\xi) = f' (\xi) \left[ g(b) - g(a) \right] \, .
+\end{equation*}\]</div>
+<p><strong>Teorema de Lagrange, o del valor medio , o de los incrementos finitos.</strong>
+Sea una aplicaci’{o}n <span class="math notranslate nohighlight">\(f : [a,b] \longrightarrow \mathbb{R}\)</span> continua en <span class="math notranslate nohighlight">\([a,b]\)</span> y derivable en <span class="math notranslate nohighlight">\((a,b)\)</span>.  Entonces, existe un punto <span class="math notranslate nohighlight">\(\xi \in (a,b)\)</span> tal que:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+f(b) - f(a) = f' (\xi) (b - a) \, .
+\end{equation*}\]</div>
+<p><img alt="Teorema de Lagrange" src="capitulos/03/lagrange.png" /></p>
+</section>
+<section id="aplicaciones-inmediatas-de-la-derivacion-de-funciones">
+<h1>Aplicaciones inmediatas de la derivación de funciones<a class="headerlink" href="#aplicaciones-inmediatas-de-la-derivacion-de-funciones" title="Permalink to this headline">#</a></h1>
+<p>Sea <span class="math notranslate nohighlight">\(f\)</span> una función real derivable en <span class="math notranslate nohighlight">\((a,b)\)</span>.</p>
+<ul class="simple">
+<li><p>Si <span class="math notranslate nohighlight">\(f' (x) \geq 0\)</span>, <span class="math notranslate nohighlight">\(\forall x \in (a,b)\)</span>, entonces <span class="math notranslate nohighlight">\(f\)</span> es monótona creciente.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(f' (x) \leq 0\)</span>, <span class="math notranslate nohighlight">\(\forall x \in (a,b)\)</span>, entonces <span class="math notranslate nohighlight">\(f\)</span> es monótona decreciente.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(f' (x) = 0\)</span>, <span class="math notranslate nohighlight">\(\forall x \in (a,b)\)</span>, entonces <span class="math notranslate nohighlight">\(f\)</span> es constante.</p></li>
+<li><p>Si <span class="math notranslate nohighlight">\(f' (x) \neq 0\)</span>, <span class="math notranslate nohighlight">\(\forall x \in (a,b)\)</span>, entonces <span class="math notranslate nohighlight">\(f\)</span> es inyectiva.</p></li>
+</ul>
+<p>El signo de <span class="math notranslate nohighlight">\(f'\)</span> puede utilizarse para determinar el carácter de máximo o mínimo de un punto estacionario: si <span class="math notranslate nohighlight">\(f\)</span>
+presenta en <span class="math notranslate nohighlight">\(a\)</span> un máximo relativo y es continua en <span class="math notranslate nohighlight">\((a - \delta , a + \delta)\)</span>, entonces</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{cases}
+f' (x) &gt; 0 , \quad \text{si } x &lt; a \\
+f' (x) &lt; 0 , \quad \text{si } x &gt; a
+\end{cases}
+\end{equation*}\]</div>
+<p>y lo contrario si <span class="math notranslate nohighlight">\(f\)</span> presenta un mínimo.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -445,20 +581,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../02/09.Boletin2.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.9. </span>Boletín 2: Límites, continuidad, Lagrange y dicotomía</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="01.DerivacionDefProp.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.1. </span>Definición de derivada y propiedades básicas</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
