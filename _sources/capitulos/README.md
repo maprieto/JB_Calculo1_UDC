@@ -13,3 +13,11 @@ Este material ha sido creado por (en orden alfabético):
 - Manuel Pájaro Diéguez,
 - Andrés Prieto Aneiros e 
 - Hiram Varela Rodríguez.
+
+Esta obra está bajo una
+[Licencia Creative Commons Atribución 4.0 Internacional][cc-by].
+
+[![CC BY 4.0][cc-by-image]][cc-by]
+
+[cc-by]: https://creativecommons.org/licenses/by/4.0/deed.es
+[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
